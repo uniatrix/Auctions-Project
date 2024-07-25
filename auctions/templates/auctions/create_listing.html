@@ -1,0 +1,39 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div class="form-container">
+        <h2>New Listing</h2>
+
+        <form action="{% url 'create_listing' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Listing Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Listing Title">
+            </div>
+            <div class="form-group">
+                <label for="description">Listing Description</label>
+                <input type="text" class="form-control" id="description" name="description" placeholder="Listing Description">
+            </div>
+            <div class="form-group">
+                <label for="starting_bid">Starting Bid</label>
+                <input type="number" class="form-control" id="starting_bid" name="starting_bid" placeholder="Starting Bid">
+            </div>
+            <div class="form-group">
+                <label for="image_url">Listing Image URL</label>
+                <input type="text" class="form-control" id="image_url" name="image_url" placeholder="Listing Image URL">
+            </div>
+            <div class="form-group">
+                <label for="category">Choose a category:</label>
+                <select class="form-control" id="category" name="category">
+                    <option value="Console">Console</option>
+                    <option value="Handheld">Handheld</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Game">Game</option>
+                    <option value="Controller">Controller</option>
+                    <option value="Accessory">Accessory</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark btn-submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

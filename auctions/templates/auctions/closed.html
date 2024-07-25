@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+<div class="container my-5">
+    <h2 class="text-center mb-5">Closed Auctions</h2>
+
+    <div class="row justify-content-center">
+        {% for listing in closed_listings %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-lg h-100">
+                    <div class="image-container">
+                        <img src="{{ listing.image_url }}" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">{{ listing.title }}</h5>
+                        <p class="card-text"><strong>Category:</strong> {{ listing.category }}</p>
+                        <p class="card-text mb-n2"><strong>Final Bid:</strong> ${{ listing.current_bid }}</p>
+                        <a href="{% url 'listing_detail' title=listing.title %}" class="btn btn-dark mt-auto">Item details</a>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        <small>Posted on {{ listing.created_at|date:"F j, Y" }}</small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+body {
+    padding: 10px;
+}
+
+/* static/auctions/styles.css */
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px; /* Ensure font size is appropriate */
+}
+
+.form-container .form-control::placeholder {
+    color: #aaa;
+}
+
+.form-container .btn-submit {
+    width: 20%;
+    padding: 10px;
+    display: block; /* Ensure the element is treated as a block element */
+    margin: 30px auto 0 auto;
+}
+
+.form-container select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px;
+    font-size: 16px; /* Ensure font size is appropriate */
+    line-height: 1.5; /* Ensure line height is appropriate */
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.image-container {
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* Ensures the entire image fits within the container */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.25rem;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+h2 {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    color: rgb(250, 248, 248) !important; /* Change link color to dark gray */
+}
+
+.nav-link:hover {
+    color: rgb(136, 174, 170) !important; /* Change link color to gray on hover */
+}
+
+.nav-custom {
+    background-color: #343a40; /* Dark background color */
+    border-radius: 10px;
+}
+
+.navbar-text {
+    font-size: 0.875rem; /* Make the text smaller */
+    color: #adb5bd; /* Subtle color for the text */
+}
