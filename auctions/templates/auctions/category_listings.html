@@ -14,7 +14,7 @@
                         <h5 class="card-title">{{ listing.title }}</h5>
                         <p class="card-text"><strong>Category:</strong> {{ listing.category }}</p>
                         <p class="card-text mb-n2"><strong>Current Bid:</strong> ${{ listing.current_bid }}</p>
-                        <a href="{% url 'listing_detail' title=listing.title %}" class="btn btn-primary mt-auto">Item details</a>
+                        <a href="{% url 'listing_detail' title=listing.title %}" class="btn btn-dark mt-auto">Item details</a>
                     </div>
                     <div class="card-footer text-muted text-center">
                         <small>Posted on {{ listing.created_at|date:"F j, Y" }}</small>
