@@ -104,6 +104,7 @@ def listing_detail(request, title):
     is_owner = listing.owner == request.user
     user_won = False
     user_is_highest_bidder = False
+    user_watchlist = None
 
     if not listing.is_active and last_bid and last_bid.person == request.user:
         user_won = True
@@ -112,6 +113,9 @@ def listing_detail(request, title):
         user_is_highest_bidder = True
 
     comments = Comment.objects.filter(listing=listing).order_by('-created_at')
+
+    if request.user.is_authenticated:
+        user_watchlist = Watchlist.objects.filter(item=listing, person=request.user).exists()
 
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -132,7 +136,8 @@ def listing_detail(request, title):
         "user_won": user_won,
         "user_is_highest_bidder": user_is_highest_bidder,
         "comments": comments,
-        "form": form
+        "form": form,
+        "user_watchlist": user_watchlist
     }
     return render(request, "auctions/listing_detail.html", context)
 

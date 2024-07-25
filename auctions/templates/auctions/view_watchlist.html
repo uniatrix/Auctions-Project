@@ -8,13 +8,14 @@
         {% for item in watchlist %}
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card shadow-lg h-100">
-                    <img src="{{ item.item.image_url }}" class="card-img-top" alt="...">
+                    <div class="image-container">
+                        <img src="{{ item.item.image_url }}" class="card-img-top" alt="...">
+                    </div>
                     <div class="card-body text-center d-flex flex-column">
                         <h5 class="card-title">{{ item.item.title }}</h5>
-                        <p class="card-text flex-grow-1">{{ item.item.description }}</p>
                         <p class="card-text"><strong>Category:</strong> {{ item.item.category }}</p>
-                        <p class="card-text"><strong>Starting Bid:</strong> ${{ item.item.starting_bid }}</p>
-                        <a href="{% url 'listing_detail' title=item.item.title %}" class="btn btn-dark mt-auto">Item details</a>
+                        <p class="card-text mb-n2"><strong>Starting Bid:</strong> ${{ item.item.starting_bid }}</p>
+                        <a href="{% url 'listing_detail' title=item.item.title %}" class="btn btn-dark mt-auto mb-2">Item details</a>
                     </div>
                     <div class="card-footer text-muted text-center">
                         <small>Posted on {{ item.item.created_at|date:"F j, Y" }}</small>
